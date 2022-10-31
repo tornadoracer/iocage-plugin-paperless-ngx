@@ -1,0 +1,15 @@
+#!/bin/sh
+
+
+mkdir -p /opt/paperless/consume
+mkdir -p /opt/paperless/media
+python3.9 -m venv venv
+sed -i "" -e '/scikit-learn/d;/pikepdf/d;/scipy/d;/numpy/d' /opt/paperless/requirements.txt
+. venv/bin/activate
+pip install -q -q --upgrade pip
+pip install -q -q -r requirements.txt
+cd src
+python3 manage.py migrate
+DJANGO_SUPERUSER_PASSWORD=admin python3 manage.py createsuperuser --noinput --email=root@localhost --username=admin
+deactivate
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. /opt/paperless/venv/bin/activate
+cd /opt/paperless/src
+exec python3 /opt/paperless/src/manage.py qcluster
