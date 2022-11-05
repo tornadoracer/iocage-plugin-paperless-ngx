@@ -35,3 +35,5 @@ sysrc -f /etc/rc.conf paperlessscheduler_enable="YES"
 service paperlesswebserver start
 service paperlessconsumer start
 service paperlessscheduler start
+
+echo “The default username and password for this install is admin for both" >> /root/PLUGIN_INFO
