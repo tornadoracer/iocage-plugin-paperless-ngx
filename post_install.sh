@@ -36,4 +36,4 @@ service paperlesswebserver start
 service paperlessconsumer start
 service paperlessscheduler start
 
-echo “The default username and password for this install is admin for both" >> /root/PLUGIN_INFO
+echo "The default username and password for this install is admin for both" >> /root/PLUGIN_INFO
