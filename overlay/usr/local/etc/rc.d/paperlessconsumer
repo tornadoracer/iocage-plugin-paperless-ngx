@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# PROVIDE: paperlessconsumer
+# REQUIRE: DAEMON
+
 . /etc/rc.subr
 
 
