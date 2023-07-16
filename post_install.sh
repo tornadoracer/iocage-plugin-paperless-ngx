@@ -17,6 +17,9 @@ chown -R paperless:paperless /opt/paperless
 
 sed -i "" -e 's/#PAPERLESS_CONSUMER_POLLING/PAPERLESS_CONSUMER_POLLING/' /opt/paperless/paperless.conf
 sed -i "" -e 's/#PAPERLESS_DATA_DIR/PAPERLESS_DATA_DIR/' /opt/paperless/paperless.conf
+sed -i "" -e  "/PAPERLESS_DATA_DIR/ a\\
+PAPERLESS_NLTK_DIR=../data/nltk\
+" /opt/paperless/paperless.conf
 sed -i "" -e 's/#PAPERLESS_MEDIA_ROOT/PAPERLESS_MEDIA_ROOT/' /opt/paperless/paperless.conf
 sed -i "" -e 's/#PAPERLESS_CONSUMPTION_DIR/PAPERLESS_CONSUMPTION_DIR/' /opt/paperless/paperless.conf
 sed -i "" -e 's/#PAPERLESS_REDIS/PAPERLESS_REDIS/' /opt/paperless/paperless.conf
