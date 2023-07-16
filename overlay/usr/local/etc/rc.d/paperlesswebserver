@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# PROVIDE: paperlessscheduler
+# REQUIRE: DAEMON
+
 . /etc/rc.subr
 
 
