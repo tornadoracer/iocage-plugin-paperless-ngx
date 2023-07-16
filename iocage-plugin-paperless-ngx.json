@@ -34,7 +34,8 @@
         "py39-sqlite3",
 	"libxml2",
 	"libxslt",
-        "expect"
+        "expect",
+        "poppler-utils"
     ],
     "packagesite": "http://pkg.FreeBSD.org/${ABI}/latest",
     "fingerprints": {
