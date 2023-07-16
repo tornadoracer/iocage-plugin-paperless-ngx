@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # PROVIDE: paperlessscheduler
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON redis
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 

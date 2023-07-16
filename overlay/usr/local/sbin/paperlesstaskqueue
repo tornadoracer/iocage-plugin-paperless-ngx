@@ -2,4 +2,4 @@
 
 . /opt/paperless/venv/bin/activate
 cd /opt/paperless/src
-celery --app paperless beat --loglevel INFO
+celery --app paperless worker --loglevel INFO
