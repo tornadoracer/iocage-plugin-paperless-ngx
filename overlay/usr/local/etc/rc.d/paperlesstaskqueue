@@ -1,13 +1,13 @@
 #!/bin/sh
 
-# PROVIDE: paperlessconsumer
+# PROVIDE: paperlesstaskqueue
 # REQUIRE: DAEMON redis
 # KEYWORD: shutdown
 
 . /etc/rc.subr
 
 
-name="paperlessconsumer"
+name="paperlesstaskqueue"
 rcvar="${name}_enable"
 procname="daemon"
 
