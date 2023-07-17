@@ -35,7 +35,8 @@
 	"libxml2",
 	"libxslt",
         "expect",
-        "poppler-utils"
+        "poppler-utils",
+	"py39-django42"
     ],
     "packagesite": "http://pkg.FreeBSD.org/${ABI}/latest",
     "fingerprints": {
