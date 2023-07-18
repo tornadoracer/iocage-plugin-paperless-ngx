@@ -7,6 +7,8 @@ python3.9 -m venv --system-site-packages venv
 sed -i "" -e '/scikit-learn/d;/pikepdf/d;/scipy/d;/numpy/d' /opt/paperless/requirements.txt
 . venv/bin/activate
 pip install -q -q --upgrade pip
+echo "Installing pip requirements from requirements.txt"
+cat requirements.txt
 pip install -q -q -r requirements.txt
 pip install concurrent-log-handler
 pip install python-dotenv
