@@ -38,7 +38,8 @@
         "poppler-utils",
 	"py39-django42",
 	"py39-celery",
-	"py39-nltk"
+	"py39-nltk",
+	"py39-python-dotenv"
     ],
     "packagesite": "http://pkg.FreeBSD.org/${ABI}/latest",
     "fingerprints": {
