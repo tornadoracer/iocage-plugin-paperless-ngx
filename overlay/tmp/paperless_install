@@ -4,7 +4,6 @@
 mkdir -p /opt/paperless/consume
 mkdir -p /opt/paperless/media
 python3.9 -m venv --system-site-packages venv
-sed -i "" -e '/scikit-learn/d;/pikepdf/d;/scipy/d;/numpy/d;s/pyyaml==6.0$/pyyaml==6.0.1/' /opt/paperless/requirements.txt
 . venv/bin/activate
 pip install -q -q --upgrade pip
 #echo "Installing pip requirements from requirements.txt"

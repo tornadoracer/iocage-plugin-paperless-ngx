@@ -27,6 +27,7 @@
     "mime-support",
     "mysql80-client",
     "mysql80-server",
+    "ninja",
     "openssl",
     "pngquant",
     "poppler-utils",
