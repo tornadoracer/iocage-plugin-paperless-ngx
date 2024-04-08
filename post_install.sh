@@ -15,6 +15,9 @@ cd /opt/paperless
 chown -R paperless:paperless /opt/paperless
 
 
+pip install scikit-learn
+
+
 sed -i "" -e 's/#PAPERLESS_CONSUMER_POLLING/PAPERLESS_CONSUMER_POLLING/' /opt/paperless/paperless.conf
 sed -i "" -e 's/#PAPERLESS_DATA_DIR/PAPERLESS_DATA_DIR/' /opt/paperless/paperless.conf
 sed -i "" -e  "/PAPERLESS_DATA_DIR/ a\\
