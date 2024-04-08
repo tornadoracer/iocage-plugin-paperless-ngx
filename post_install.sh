@@ -7,8 +7,8 @@ service redis start
 
 
 mkdir /opt
-curl -L https://github.com/paperless-ngx/paperless-ngx/releases/download/v1.16.5/paperless-ngx-v1.16.5.tar.xz --output paperless-ngx-v1.16.5.tar.xz
-tar -zxf paperless-ngx-v1.16.5.tar.xz
+curl -L https://github.com/paperless-ngx/paperless-ngx/releases/download/v2.7.2/paperless-ngx-v2.7.2.tar.xz --output paperless-ngx-v2.7.2.tar.xz
+tar -zxf paperless-ngx-v2.7.2.tar.xz
 mv paperless-ngx /opt/paperless
 pw user add -n paperless -c 'Paperless' -d /opt/paperless -m -s /bin/sh
 cd /opt/paperless
