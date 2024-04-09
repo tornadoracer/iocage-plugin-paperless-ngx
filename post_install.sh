@@ -32,6 +32,17 @@ sed -i "" -e '/PDF/s/rights="none"/rights="read|write"/' /usr/local/etc/ImageMag
 
 
 su paperless -c /tmp/paperless_install
+
+if ! unpaper --version > /dev/null 2>&1; then
+    portsnap auto > /dev/null
+    cd /usr/ports/security/libtasn1
+    export ALLOW_UNSUPPORTED_SYSTEM=1
+    make deinstall
+    make install
+    cd -
+    rm -rf /usr/ports /var/db/portsnap
+fi
+
 sysrc -f /etc/rc.conf paperlessconsumer_enable="YES"
 sysrc -f /etc/rc.conf paperlesswebserver_enable="YES"
 sysrc -f /etc/rc.conf paperlessscheduler_enable="YES"
