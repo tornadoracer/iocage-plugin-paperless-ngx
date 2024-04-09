@@ -34,6 +34,7 @@
     "postgresql15-client",
     "py39-celery",
     "py39-concurrent-log-handler",
+    "py39-daphne",
     "py39-dateutil",
     "py39-dj42-channels-redis",
     "py39-dj42-channels",

@@ -15,4 +15,8 @@ DJANGO_SUPERUSER_PASSWORD="admin" python3 manage.py createsuperuser --noinput --
 python3 -W ignore::RuntimeWarning -m nltk.downloader -d "/opt/paperless/data/nltk" snowball_data
 python3 -W ignore::RuntimeWarning -m nltk.downloader -d "/opt/paperless/data/nltk" stopwords
 python3 -W ignore::RuntimeWarning -m nltk.downloader -d "/opt/paperless/data/nltk" punkt
+
+# Fix for server Websockets (see https://github.com/paperless-ngx/paperless-ngx/issues/6349)
+patch -R src/paperless/settings.py < /tmp/paperless_daphne.patch
+
 deactivate
