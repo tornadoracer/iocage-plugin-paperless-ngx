@@ -2,4 +2,4 @@
 
 . /opt/paperless/venv/bin/activate
 cd /opt/paperless/src
-celery --app paperless worker --loglevel INFO
+python3 -m celery --app paperless worker --loglevel INFO

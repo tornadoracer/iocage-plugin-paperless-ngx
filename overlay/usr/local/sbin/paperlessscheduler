@@ -2,4 +2,4 @@
 
 . /opt/paperless/venv/bin/activate
 cd /opt/paperless/src
-celery --app paperless beat --loglevel INFO
+python3 -m celery --app paperless beat --loglevel INFO

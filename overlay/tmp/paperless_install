@@ -1,22 +1,22 @@
 #!/bin/sh
 
-
 mkdir -p /opt/paperless/consume
 mkdir -p /opt/paperless/media
+
 python3.9 -m venv --system-site-packages venv
-sed -i "" -e '/scikit-learn/d;/pikepdf/d;/scipy/d;/numpy/d;s/pyyaml==6.0$/pyyaml==6.0.1/' /opt/paperless/requirements.txt
 . venv/bin/activate
-pip install -q -q --upgrade pip
-#echo "Installing pip requirements from requirements.txt"
-#cat requirements.txt
-pip install -q -q -r requirements.txt
-#pip install concurrent-log-handler
-#pip install python-dotenv
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
 cd src
 python3 manage.py migrate
-DJANGO_SUPERUSER_PASSWORD=admin python3 manage.py createsuperuser --noinput --email=root@localhost --username=admin
+DJANGO_SUPERUSER_PASSWORD="admin" python3 manage.py createsuperuser --noinput --email=root@localhost --username=admin
 python3 -W ignore::RuntimeWarning -m nltk.downloader -d "/opt/paperless/data/nltk" snowball_data
 python3 -W ignore::RuntimeWarning -m nltk.downloader -d "/opt/paperless/data/nltk" stopwords
 python3 -W ignore::RuntimeWarning -m nltk.downloader -d "/opt/paperless/data/nltk" punkt
-deactivate
 
+# Fix for server Websockets (see https://github.com/paperless-ngx/paperless-ngx/issues/6349)
+patch -R src/paperless/settings.py < /tmp/paperless_daphne.patch
+
+deactivate
