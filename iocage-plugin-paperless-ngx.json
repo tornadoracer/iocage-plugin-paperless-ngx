@@ -9,7 +9,6 @@
     "pkgs": [
         "py39-pip",
         "py39-pikepdf",
-	"py39-scikit-learn",
         "liberation-fonts-ttf",
         "imagemagick7",
         "zbar",
